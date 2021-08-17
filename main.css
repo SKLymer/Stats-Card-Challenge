@@ -1,0 +1,247 @@
+/*## Colors
+
+### Primary
+
+- Very dark blue (main background): hsl(233, 47%, 7%)
+- Dark desaturated blue (card background): hsl(244, 38%, 16%)
+- Soft violet (accent): hsl(277, 64%, 61%)
+
+### Neutral
+
+- White (main heading, stats): hsl(0, 0%, 100%)
+- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Font
+
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 400, 700
+
+- Family: [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
+- Weights: 400
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+
+--main-bck: hsl(233, 47%, 7%);
+--dark-blu: hsl(244, 38%, 16%);
+--sft-vio: hsl(277, 64%, 61%);     
+--main-wht: hsl(0, 0%, 100%);
+--sec-wht: hsla(0, 0%, 100%, 0.75);
+--stat-wht: hsla(0, 0%, 100%, 0.6);
+--ff-fam: "Inter";
+--fam-main: "Lexend Deca";
+
+}
+
+body {
+    font-family: "Lexend Deca";
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+    color: var(--sec-wht);
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: "Inter";
+    color: var(--main-wht);
+    line-height: 1;
+}
+
+main {
+    
+    width: 100vw;
+    height: 100vh;
+    background: var(--main-bck);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+section {
+    width: min(90%, 1080px);
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+   
+}
+
+.col-1 {
+    padding: 2rem; 
+    background: var(--dark-blu); 
+    
+
+    
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+   
+}
+
+
+.desc {
+    margin-bottom: 3.25em;
+    
+}
+
+.img-cont-1 {
+
+display: none;
+background:hsl(277, 64%, 61%);
+
+}
+.img-cont-2 {
+ 
+    background:hsl(277, 64%, 61%);
+ }
+
+.col-2 img {
+
+    
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+
+.col-2 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   
+}
+
+
+.col-2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.2;
+    background:hsl(277, 64%, 61%);
+    z-index: 2;
+}
+
+
+
+@media (max-width: 500px) {
+    
+    section {
+        
+        max-width: 90%;
+
+    }
+
+}
+
+@media (max-width: 799px) {
+    
+    section {
+        
+        max-width: 60%;
+
+    }
+
+
+    main {
+        padding: 3rem 0;
+    }
+
+}
+/*************************BIG SCREEN*************************/
+
+@media (min-width: 800px) {
+
+    .img-cont-2 {
+       display:none;
+       background:hsl(277, 64%, 61%);
+    }
+
+    .img-cont-1 {
+        display:block;
+        width: 100%;
+        height: 100%;
+    }
+
+section {
+    
+
+    display: flex;
+    flex-direction: row-reverse;
+   /* display: grid;
+    grid-template-columns: repeat(2,1fr);*/
+    text-align: left;
+}
+
+header h1 {
+
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-top: .25rem;
+    margin-bottom: .6em;
+    max-width: 82%;
+   
+}
+
+.col-1 {
+    
+    padding: 3.7rem 0 0 3.25rem;
+
+}
+
+.desc {
+    line-height: 2;
+}
+
+.card-info {
+    max-width: 85%;
+    
+}
+
+
+
+.col-2 img {
+
+    max-width: 100%;
+    height: 100%;
+    
+}
+
+
+.stats {
+    display: flex;
+    line-height: .25;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3.52rem;
+}
+
+section > * {
+    flex-basis: 50%;
+}
+
+}
+
+
+
+/*************************BIG SCREEN*************************/
