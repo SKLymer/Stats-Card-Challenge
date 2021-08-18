@@ -142,6 +142,9 @@ background:hsl(277, 64%, 61%);
     z-index: 2;
 }
 
+span {
+    color:hsl(277, 64%, 61%);
+}
 
 
 @media (max-width: 500px) {
